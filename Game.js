@@ -17,6 +17,8 @@ class Game {
         this.opponentShots = []; // Disparos del oponente
         this.xDown = null; //  Posición en la que el usuario ha tocado la pantalla
         this.paused = false; // Indica si el juego está pausado
+        //Modificado por Ericka Zavala.
+        this.score=0;
     }
 
     /**
@@ -41,6 +43,7 @@ class Game {
 
             this.player = new Player(this);
             this.timer = setInterval(() => this.update(), 50);
+            document.getElementById('scoreli').innerHTML="Score: "+this.score;//Modificado por Ericka Zavala.
         }
     }
 

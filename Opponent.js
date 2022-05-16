@@ -65,8 +65,11 @@ class Opponent extends Character {
     collide() {
         
         if (!this.dead) {
+            this.game.score++; //Modificado por Ericka Zavala.
+            document.getElementById('scoreli').innerHTML="Score: "+this.game.score;//Modificado por Ericka Zavala.
             setTimeout(() => {
                 this.game.removeOpponent();
+                
             }, 2000);
             super.collide();
         }

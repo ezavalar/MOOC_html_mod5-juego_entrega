@@ -14,9 +14,11 @@ class Player extends Character {
             y = game.height - height,
             speed = PLAYER_SPEED,
             myImage = PLAYER_PICTURE,
-            myImageDead = PLAYER_PICTURE_DEAD;
+            myImageDead = PLAYER_PICTURE_DEAD; 
 
         super(game, width, height, x, y, speed, myImage, myImageDead);
+        this.lives = PLAYER_LIVES;//Modificado por Ericka Zavala.
+        document.getElementById('livesli').innerHTML="Lives: "+this.lives; //Modificado por Ericka Zavala.
     }
 
     /**
@@ -47,10 +49,24 @@ class Player extends Character {
      */
     collide() {
         if (!this.dead) {
-            setTimeout(() => {
-                this.game.endGame();
-            }, 2000);
-            super.collide();
+            //Modificado por Ericka Zavala.
+            this.lives--;
+            document.getElementById('livesli').innerHTML="Lives: "+this.lives; //Modificado por Ericka Zavala. 
+            if(this.lives!==0)
+            {
+                setTimeout(() => {
+                   this.image.src = PLAYER_PICTURE;
+                   this.dead=false;
+                }, 2000);
+            }
+            else
+            {
+                setTimeout(() => {
+                    this.game.endGame();
+                }, 2000);
+            } 
+
+            super.collide(); 
         }
     }
 }

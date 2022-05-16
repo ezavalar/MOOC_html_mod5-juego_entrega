@@ -13,6 +13,7 @@ const OPPONENT_HEIGHT = 5,
     PLAYER_PICTURE_DEAD = "assets/bueno_muerto.png",
     PLAYER_SPEED = 20,
     PLAYER_WIDTH = 5,
+    PLAYER_LIVES = 3, //Modificado por Ericka Zavala.
     SHOT_HEIGHT = 1.5,
     SHOT_SPEED = 20,
     SHOT_PICTURE_PLAYER = "assets/shot1.png",
