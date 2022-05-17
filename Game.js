@@ -91,8 +91,11 @@ class Game {
     removeOpponent () {
         if (this.opponent) {
             document.body.removeChild(this.opponent.image);
+            
         }
-        this.opponent = new Opponent(this);
+        
+        let _Boss_= new Boss(this)
+        this.opponent= _Boss_; //Modificado por Ericka Zavala.
     }
 
     /**
@@ -210,7 +213,13 @@ class Game {
      */
     endGame () {
         this.ended = true;
-        let gameOver = new Entity(this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, GAME_OVER_PICTURE)
+        //Modificado por Ericka Zavala.
+        let gameOver;
+        if(this.player.lives>0)
+            gameOver = new Entity(this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, YOU_WIN_PICTURE);
+
+        else
+            gameOver = new Entity(this, this.width / 2, "auto", this.width / 4, this.height / 4, 0, GAME_OVER_PICTURE);
         gameOver.render();
     }
 

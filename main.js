@@ -4,6 +4,7 @@ const OPPONENT_HEIGHT = 5,
     OPPONENT_SPEED = 5,
     OPPONENT_WIDTH = 5,
     GAME_OVER_PICTURE = "assets/game_over.png",
+    YOU_WIN_PICTURE= "assets/you_win.png",
     KEY_LEFT = "LEFT",
     KEY_RIGHT = "RIGHT",
     KEY_SHOOT = "SHOOT",
@@ -18,7 +19,10 @@ const OPPONENT_HEIGHT = 5,
     SHOT_SPEED = 20,
     SHOT_PICTURE_PLAYER = "assets/shot1.png",
     SHOT_PICTURE_OPPONENT = "assets/shot2.png",
-    SHOT_WIDTH = 1.5;
+    SHOT_WIDTH = 1.5,
+    BOSS_PICTURE ="assets/jefe.png", //Modificado por Ericka Zavala.
+    BOSS_PICTURE_DEAD ="assets/jefe_muerto.png"; //Modificado por Ericka Zavala.
+
 
 function getRandomNumber (range) {
     return Math.floor(Math.random() * range);
